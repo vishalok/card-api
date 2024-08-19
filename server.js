@@ -2,10 +2,11 @@
 const express = require('express');
 const connectDB = require('./config/db.config');
 const cardRoutes = require('./routes/card.route');
+const cors = require('cors');
 require('dotenv').config();
 const app = express();
 const port = process.env.PORT;
-
+app.use(cors());
 app.use(express.json());
 
 // Import and use routes
